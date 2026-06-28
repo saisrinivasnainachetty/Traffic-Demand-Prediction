@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TrafficVision AI | Smart Traffic Demand Prediction</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+          rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+
+            <i class="fa-solid fa-road"></i>
+
+            <span>TrafficVision AI</span>
+
+        </a>
+
+        <button class="navbar-toggler"
+        type="button"
+        aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+
+             id="navbar">
+
+            <ul class="navbar-nav ms-auto align-items-center">
+
+    <li class="nav-item">
+    <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('predict') }}">Prediction</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('dashboard') }}">Dashboard</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+</li>
+
+<li class="nav-item ms-3">
+    <a href="{{ url_for('predict') }}"
+       class="btn btn-primary nav-btn">
+       Get Started
+    </a>
+</li>
+
+</ul>
+        </div>
+
+    </div>
+
+</nav>
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero" data-aos="fade-up">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <span class="hero-badge">
+
+                    AI Powered Smart Traffic Platform
+
+                </span>
+
+                <h1>
+
+                    Predict Smarter.
+
+                    <br>
+
+                    Drive Better.
+
+                </h1>
+
+                <p>
+
+                    TrafficVision AI leverages Machine Learning,
+                    LightGBM and XGBoost to forecast traffic demand,
+                    reduce congestion, and provide intelligent
+                    traffic analytics for smarter cities.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="{{ url_for('predict') }}" class="btn btn-primary">
+    Start Prediction
+</a>
+
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary">
+    View Dashboard
+</a>
+
+                </div>
+
+                <!-- Hero Statistics -->
+
+<div class="hero-stats">
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-database"></i>
+
+        <h3 class="counter" data-target="120">0</h3>
+<span class="suffix">K+</span>
+        <p>Traffic Records</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <h3 class="counter" data-target="87.05">0</h3>
+<span class="suffix">%</span>
+
+        <p>Prediction Accuracy</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <i class="fa-solid fa-clock"></i>
+
+        <h3>24/7</h3>
+
+        <p>Traffic Monitoring</p>
+
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-lg-6 text-center" data-aos="fade-left">
+
+                <img
+    src="{{ url_for('static', filename='images/traffic-hero.png') }}"
+    class="hero-image"
+    alt="Traffic">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TECHNOLOGIES ================= -->
+
+<section class="technology">
+
+    <div class="container text-center">
+
+        <h2 class="section-title">
+
+            Built Using Modern Technologies
+
+        </h2>
+
+        <p class="section-subtitle">
+
+            Combining Machine Learning, Flask and Modern Web Technologies
+            to deliver accurate traffic demand prediction.
+
+        </p>
+
+        <div class="tech-grid">
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-brands fa-python"></i>
+                <h4>Python</h4>
+            </div>
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-solid fa-brain"></i>
+                <h4>Machine Learning</h4>
+            </div>
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-solid fa-server"></i>
+                <h4>Flask</h4>
+            </div>
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-solid fa-chart-column"></i>
+                <h4>XGBoost</h4>
+            </div>
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-solid fa-database"></i>
+                <h4>Pandas</h4>
+            </div>
+
+            <div class="tech-card" data-aos="zoom-in">
+                <i class="fa-solid fa-chart-line"></i>
+                <h4>LightGBM</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY TRAFFICVISION AI ================= -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <h2 class="section-title">
+                Why Choose TrafficVision AI?
+            </h2>
+
+            <p class="section-subtitle">
+                A modern AI-powered platform designed to deliver accurate traffic predictions,
+                intelligent analytics, and actionable insights for smarter urban mobility.
+            </p>
+
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card" data-aos="fade-up">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    <h4>AI Prediction</h4>
+
+                    <p>
+                        Advanced Machine Learning algorithms provide highly accurate traffic demand forecasting.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card" data-aos="fade-up">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                    <h4>Smart Analytics</h4>
+
+                    <p>
+                        Analyze traffic trends using interactive dashboards and visual reports.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card" data-aos="fade-up">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <h4>Real-Time Insights</h4>
+
+                    <p>
+                        Quickly identify congestion patterns and improve transportation planning.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card" data-aos="fade-up">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <h4>Reliable Models</h4>
+
+                    <p>
+                        Built using robust Machine Learning techniques with high prediction accuracy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WORKFLOW ================= -->
+
+<section class="workflow">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <span class="section-badge">HOW IT WORKS</span>
+
+            <h2 class="section-title">
+                Machine Learning Prediction Workflow
+            </h2>
+
+            <p class="section-subtitle">
+                A simple workflow showing how TrafficVision AI transforms raw traffic data into accurate predictions.
+            </p>
+
+        </div>
+
+        <div class="workflow-grid">
+
+            <div class="workflow-card" data-aos="flip-left">
+                <i class="fa-solid fa-database"></i>
+                <h4>Traffic Data</h4>
+                <p>Historical traffic information is collected.</p>
+            </div>
+
+            <div class="workflow-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="workflow-card" data-aos="flip-left">
+                <i class="fa-solid fa-filter"></i>
+                <h4>Preprocessing</h4>
+                <p>Clean and prepare the dataset.</p>
+            </div>
+
+            <div class="workflow-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="workflow-card" data-aos="flip-left">
+                <i class="fa-solid fa-brain"></i>
+                <h4>ML Model</h4>
+                <p>Train LightGBM and XGBoost models.</p>
+            </div>
+
+            <div class="workflow-arrow">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+            <div class="workflow-card" data-aos="flip-left">
+                <i class="fa-solid fa-chart-line"></i>
+                <h4>Prediction</h4>
+                <p>Generate traffic demand forecasts.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= DASHBOARD PREVIEW ================= -->
+
+<section class="dashboard-preview">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="section-badge">
+                    DASHBOARD
+                </span>
+
+                <h2 class="section-title">
+                    Interactive Traffic Analytics Dashboard
+                </h2>
+
+                <p class="section-subtitle text-start">
+
+                    Monitor traffic demand, prediction accuracy,
+                    peak hours and traffic trends through an
+                    intuitive analytics dashboard designed for
+                    smart city decision making.
+
+                </p>
+
+                <ul class="dashboard-list">
+
+                    <li><i class="fa-solid fa-check"></i> Prediction Accuracy</li>
+                    <li><i class="fa-solid fa-check"></i> Interactive Charts</li>
+                    <li><i class="fa-solid fa-check"></i> Peak Hour Analysis</li>
+                    <li><i class="fa-solid fa-check"></i> Daily Traffic Reports</li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="dashboard-card" data-aos="zoom-in-left">
+
+                    <div class="chart-box">
+
+                        <div class="bar" style="height:65%"></div>
+                        <div class="bar" style="height:90%"></div>
+                        <div class="bar" style="height:50%"></div>
+                        <div class="bar" style="height:100%"></div>
+                        <div class="bar" style="height:75%"></div>
+                        <div class="bar" style="height:45%"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+    duration:1000,
+
+    once:true,
+
+    offset:120,
+
+    easing:'ease-in-out'
+
+});
+
+</script>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
